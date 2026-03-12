@@ -1,11 +1,14 @@
-import { Text, View, StyleSheet } from "react-native";
-import { Link } from "expo-router";
+import { Text, View, StyleSheet, Button } from "react-native";
+import { Link, useRouter } from "expo-router";
 
 export default function Index() {
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
       <Text>Hello world!</Text>
       <Link href={"/about"}>Go to about screen</Link>
+      <Button title="Navigate" onPress={() => router.push("/about")} />
     </View>
   );
 }
